@@ -1,7 +1,5 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { regular } from '@fortawesome/fontawesome-svg-core/import.macro'
 
 const Navbar = () => {
   const urls = [
@@ -29,7 +27,7 @@ const Navbar = () => {
         ))}
       </ul>
 
-      <FontAwesomeIcon icon={regular('coffee')} />
+      <i className="fa-light fa-user" />
     </nav>
   );
 };
