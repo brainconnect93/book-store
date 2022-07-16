@@ -21,11 +21,13 @@ const Navbar = () => {
 
       <ul className="nav-menu">
         {urls.map((url) => (
-          <l1 key={url.id}>
+          <li className="nav-item" key={url.id}>
             <NavLink to={url.url}>{ url.text }</NavLink>
-          </l1>
+          </li>
         ))}
       </ul>
+
+      <i class="fa-light fa-user"></i>
     </nav>
   );
 };
