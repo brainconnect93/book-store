@@ -16,9 +16,10 @@ This application was built using React and Redux.
 - Javascript
 - CSS
 - Redux
+
 ## Live Demo
 
-
+- N/A
 
 ## Getting Started
 
