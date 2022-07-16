@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Books from './Books';
+import Book from './Books';
 import AddBook from './AddBooks';
 
 const DisplayBooks = () => {
@@ -10,7 +10,7 @@ const DisplayBooks = () => {
   return (
     <div>
       {books.map((books) => (
-        <Books
+        <Book
           key={books.id}
           title={books.title}
           author={books.author}
