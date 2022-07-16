@@ -27,9 +27,9 @@ const Navbar = () => {
         ))}
       </ul>
 
-      <i class="fa-light fa-user"></i>
+      <i className="fa-light fa-user" />
     </nav>
   );
 };
 
-export default Navbar
+export default Navbar;

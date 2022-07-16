@@ -4,17 +4,16 @@ import Navbar from './components/NavBar';
 import DisplayBooks from './components/DisplayBooks';
 import Category from './components/Categories';
 
-
 const App = () => (
   <>
     <Router>
       <Navbar />
-	  <Routes>
-	    <Route path="/" element={<DisplayBooks />} />
-	    <Route path="/categories" element={<Category />} />
-	  </Routes>
-	</Router>
+      <Routes>
+        <Route path="/" element={<DisplayBooks />} />
+        <Route path="/categories" element={<Category />} />
+      </Routes>
+    </Router>
   </>
-)
+);
 
 export default App;
