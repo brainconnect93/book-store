@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Books from './books';
+import Books from './Books';
 import AddBook from './AddBooks';
 
 const DisplayBooks = () => {
