@@ -1,5 +1,5 @@
-import { combineReducers } from '@reduxjs/toolkit';
-import { configureStore } from '@reduxjs/toolkit/dist/configureStore';
+import { combineReducers } from 'redux';
+import { configureStore } from '@reduxjs/toolkit';
 import AddandRemoveReducer from './books/books';
 import CategoriesReducer from './categories/categories';
 
