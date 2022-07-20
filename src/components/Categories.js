@@ -6,12 +6,18 @@ const Category = () => {
   const dispatch = useDispatch();
 
   const checkStatus = () => {
-    dispatch(checkBookStatus())
-  }
-}
-  <div>
-    <button type="button">check status</button>
-  </div>
-);
+    dispatch(checkBookStatus());
+  };
 
+  return (
+    <div>
+    <button 
+    type="button"
+    onClick={(e) => checkStatus(e)}>
+      check status
+      </button>
+    </div>
+  );
+};
+  
 export default Category;
