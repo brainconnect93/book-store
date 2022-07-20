@@ -11,7 +11,28 @@ export const removedBook = (payload) => ({
   payload,
 });
 
-const books = [];
+const books = [
+  {
+    id: 1,
+    title: 'Think Big',
+    author: 'Ben Carson'
+  },
+  {
+    id: 2,
+    title: 'The Power of Significance',
+    author: 'John Maxwell'
+  },
+  {
+    id: 3,
+    title: 'Change your thinking cahnge your life',
+    author: 'Brian Tracy'
+  },
+  {
+    id: 4,
+    title: 'The Leader who had no title',
+    author: 'Robin Sharma'
+  }
+];
 
 export default (state = books, action) => {
   switch (action.type) {
@@ -21,7 +42,7 @@ export default (state = books, action) => {
       ];
 
     case REMOVE_BOOK:
-      return state.filter((book) => book.id !== action.payload);
+      return state.filter((books) => books.id !== action.payload);
 
     default:
       return state;
