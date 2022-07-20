@@ -2,11 +2,11 @@ const ADD_BOOK = 'ADD_BOOK';
 const REMOVE_BOOK = 'REMOVE_BOOK';
 
 export const addedBook = () => ({
-    type: ADD_BOOK,
+  type: ADD_BOOK,
 });
 
 export const removedBook = () => ({
-    type: REMOVE_BOOK,
+  type: REMOVE_BOOK,
 });
 
 const books = [];
@@ -24,7 +24,7 @@ export default (state = books, action) => {
         ...state.slice(action.payload.index + 1, state.length),
       ];
 
-      default:
-        return state;
+    default:
+      return state;
   }
 };

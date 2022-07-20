@@ -10,7 +10,7 @@ export default (state = categories, action) => {
   switch (action.type) {
     case CHECK_STATUS:
       return [
-        ...state, "Under construction",
+        ...state, 'Under construction',
       ];
     default:
       return state;
