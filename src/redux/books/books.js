@@ -31,7 +31,7 @@ const books = [
     id: 4,
     title: 'The Leader who had no title',
     author: 'Robin Sharma'
-  }
+  },
 ];
 
 export default (state = books, action) => {
