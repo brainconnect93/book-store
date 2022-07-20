@@ -1,12 +1,14 @@
-const ADD_BOOK = 'ADD_BOOK';
-const REMOVE_BOOK = 'REMOVE_BOOK';
+const ADD_BOOK = 'bookstore/books/ADD_BOOK';
+const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
 
-export const addedBook = () => ({
+export const addedBook = (payload) => ({
   type: ADD_BOOK,
+  payload,
 });
 
-export const removedBook = () => ({
+export const removedBook = (payload) => ({
   type: REMOVE_BOOK,
+  payload,
 });
 
 const books = [];
@@ -20,8 +22,7 @@ export default (state = books, action) => {
 
     case REMOVE_BOOK:
       return [
-        ...state.slice(0, action.payload.index),
-        ...state.slice(action.payload.index + 1, state.length),
+        ...state.filter((book) => book.id !== action.payload),
       ];
 
     default:
