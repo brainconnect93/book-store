@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch, shallowEqual } from 'react-redux';
 import { removedBook } from '../redux/books/books';
 
-export default function bookLists() {
+export default function BookLists() {
   const displayBooks = useSelector((state) => state.books, shallowEqual);
   const dispatch = useDispatch();
 
@@ -18,14 +18,16 @@ export default function bookLists() {
           <div>{bookList.title}</div>
           <div>{bookList.author}</div>
 
-          <button 
-          type="button"
-          id={bookList.id}
-          onClick={(e) => deleteBook(e)}>
-            Remove</button>
+          <button
+            type="button"
+            id={bookList.id}
+            onClick={(e) => deleteBook(e)}
+          >
+            Remove
+          </button>
 
         </li>
-      ))} 
-  </ul>
+      ))}
+    </ul>
   );
 }

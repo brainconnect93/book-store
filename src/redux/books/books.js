@@ -15,22 +15,22 @@ const books = [
   {
     id: 1,
     title: 'Think Big',
-    author: 'Ben Carson'
+    author: 'Ben Carson',
   },
   {
     id: 2,
     title: 'The Power of Significance',
-    author: 'John Maxwell'
+    author: 'John Maxwell',
   },
   {
     id: 3,
     title: 'Change your thinking cahnge your life',
-    author: 'Brian Tracy'
+    author: 'Brian Tracy',
   },
   {
     id: 4,
     title: 'The Leader who had no title',
-    author: 'Robin Sharma'
+    author: 'Robin Sharma',
   },
 ];
 

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import Book from './Books';
-import AddBook from './AddBooks';
 import { useDispatch } from 'react-redux';
-import { addedBook } from '../redux/books/books';
 import { v4 as uuidv4 } from 'uuid';
+import BookLists from './Books';
+import AddBook from './AddBooks';
+import { addedBook } from '../redux/books/books';
 
 const DisplayBooks = () => {
   const dispatch = useDispatch();
@@ -28,25 +28,26 @@ const DisplayBooks = () => {
       dispatch(addedBook(books));
     }
 
-      // to clear the input field
-      e.target.parentElement.children[0].value = '';
-      e.target.parentElement.children[1].value = '';
+    // to clear the input field
+    e.target.parentElement.children[0].value = '';
+    e.target.parentElement.children[1].value = '';
 
-      setBooks({
-        title: '',
-        author: '',
-      });
-    };
+    setBooks({
+      title: '',
+      author: '',
+    });
+  };
 
-    return (
-      <div>
-        <bookLists />
-  
-        <AddBook 
-        handleSubmit={handleSubmit} 
-        onChange={onChange}/>
-      </div>
-    );
+  return (
+    <div>
+      <BookLists />
+
+      <AddBook
+        handleSubmit={handleSubmit}
+        onChange={onChange}
+      />
+    </div>
+  );
 };
 
 export default DisplayBooks;

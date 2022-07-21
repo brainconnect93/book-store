@@ -11,13 +11,14 @@ const Category = () => {
 
   return (
     <div>
-    <button 
-    type="button"
-    onClick={(e) => checkStatus(e)}>
-      check status
+      <button
+        type="button"
+        onClick={(e) => checkStatus(e)}
+      >
+        check status
       </button>
     </div>
   );
 };
-  
+
 export default Category;
