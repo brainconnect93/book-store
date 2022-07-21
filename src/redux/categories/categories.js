@@ -1,9 +1,5 @@
 const CHECK_STATUS = 'bookstore/categories/CHECK_STATUS';
 
-export const checkBookStatus = () => ({
-  type: CHECK_STATUS,
-});
-
 const categories = [];
 
 export default (state = categories, action) => {
@@ -14,3 +10,7 @@ export default (state = categories, action) => {
       return state;
   }
 };
+
+export const checkBookStatus = () => ({
+  type: CHECK_STATUS,
+});
