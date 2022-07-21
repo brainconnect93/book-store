@@ -19,8 +19,8 @@ export default function BookLists() {
           <div>{bookList.author}</div>
 
           <button
-            type="button"
             id={bookList.id}
+            type="button"
             onClick={(e) => deleteBook(e)}
           >
             Remove

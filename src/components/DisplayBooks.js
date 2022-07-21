@@ -9,9 +9,9 @@ const DisplayBooks = () => {
   const dispatch = useDispatch();
 
   const [books, setBooks] = useState({
-    id: '',
     title: '',
     author: '',
+    id: '',
   });
 
   const onChange = (e) => {

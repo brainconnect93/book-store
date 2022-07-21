@@ -6,9 +6,9 @@ export const addedBook = (payload) => ({
   payload,
 });
 
-export const removedBook = (payload) => ({
+export const removedBook = (id) => ({
   type: REMOVE_BOOK,
-  payload,
+  id,
 });
 
 const books = [
@@ -42,7 +42,7 @@ export default (state = books, action) => {
       ];
 
     case REMOVE_BOOK:
-      return state.filter((books) => books.id !== action.payload);
+      return state.filter((books) => books.id !== action.id);
 
     default:
       return state;
