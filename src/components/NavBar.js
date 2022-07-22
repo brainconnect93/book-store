@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import contactImage from '../images/contact-icon.png';
 
 const Navbar = () => {
   const urls = [
@@ -26,8 +27,9 @@ const Navbar = () => {
           </li>
         ))}
       </ul>
-
-      <i className="fa-light fa-user" />
+      <div className="icon">
+        <img src={contactImage} className="image" alt="contact-icon" />
+      </div>
     </nav>
   );
 };

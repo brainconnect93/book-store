@@ -1,3 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Roboto+Slab:wght@300;400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #f3f3f4;
 }
+
+:root {
+  --black: #121212;
+  --pinkish-grey: #c7c7c7;
+  --very-light-pink: #c4c4c4;
+  --medium-blue: #0290ff;
+  --bubble-gum-pink: #ff5ab7;
+  --warm-grey: #888;
+  --white: #fff;
+}
+
+.navbar {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  background-color: var(--white);
+  padding: 8px 10px;
+  height: auto;
+}
+
+.nav-head {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.875rem;
+  height: 2.313rem;
+  color: var(--medium-blue);
+  font-weight: 700;
+  margin-left: 3.5rem;
+}
+
+.nav-menu {
+  display: flex;
+  margin-left: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  height: 1rem;
+  font-weight: 400;
+  margin-top: 10px;
+  color: var(--black);
+}
+
+.nav-item {
+  display: flex;
+  list-style: none;
+  margin: 0 15px;
+  color: var(--black);
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+.icon {
+  border: 1px solid var(--very-light-pink);
+  border-radius: 60%;
+  width: 2.513rem;
+  height: 2.513rem;
+  padding: 5px;
+  margin-left: 55%;
+  margin-top: 8px;
+}
+
+.image {
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 30%;
+  background-color: #0290ff;
+}
+
