@@ -1,27 +1,32 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch, shallowEqual } from 'react-redux';
-import { removedBook } from '../redux/books/books';
+import { deleteBook, loadBooks } from '../redux/books/thunkFunction';
 
 export default function BookLists() {
   const displayBooks = useSelector((state) => state.books, shallowEqual);
+
   const dispatch = useDispatch();
 
-  const deleteBook = (e) => {
+  useEffect(() => {
+    dispatch(loadBooks());
+  }, []);
+
+  const deleteBookItems = (e) => {
     const targetId = e.target.id;
-    dispatch(removedBook(targetId));
+    dispatch(deleteBook(targetId));
   };
 
   return (
     <ul>
-      {displayBooks.map((bookList) => (
-        <li key={bookList.id}>
-          <div>{bookList.title}</div>
-          <div>{bookList.author}</div>
+      {Object.keys(displayBooks).map((bookId) => (
+        <li key={displayBooks[bookId][0].item_id}>
+          <div>{displayBooks[bookId][0].title}</div>
+          <div>{displayBooks[bookId][0].author}</div>
 
           <button
-            id={bookList.id}
+            id={bookId}
             type="button"
-            onClick={(e) => deleteBook(e)}
+            onClick={(e) => deleteBookItems(e)}
           >
             Remove
           </button>
