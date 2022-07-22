@@ -1,4 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { useDispatch } from 'react-redux';
+// import DisplayBooks from '../components/DisplayBooks';
 
 const CREATE_BOOK = 'bookstore/books/CREATE_BOOK';
 const DELETE_BOOK = 'bookstore/books/DELETE_BOOK';
@@ -15,9 +17,10 @@ export const createBook = createAsyncThunk(
     headers: {
       'content-type': 'application/json; charset=UTF-8',
     },
-  })
-    .then((res) => res.text())
-    .then((data) => ([data, books])),
+  }).then(() => {
+      const dispatch = useDispatch();
+      return dispatch(loadBooks());
+    }),
 );
 
 export const deleteBook = createAsyncThunk(
@@ -35,16 +38,18 @@ export const loadBooks = createAsyncThunk(
     const request = new Request(`${baseUrl}/${appId}/books`);
     const res = await fetch(request);
     const result = await res.json();
-    const arr = Object.enteries(result);
+    console.log(result);
+    return result;
+    // const arr = Object.enteries(result);
 
-    const newArr = [];
-    arr.forEach((item) => {
-      const itemId = item[0];
-      const bookList = item[1][0];
-      newArr.push({ ...bookList, item_id: itemId });
-    });
+    // const newArr = [];
+    // arr.forEach((item) => {
+    //   const itemId = item[0];
+    //   const bookList = item[1][0];
+    //   newArr.push({ ...bookList, item_id: itemId });
+    // });
 
-    return newArr;
+    // return newArr;
   },
 );
 
@@ -52,15 +57,13 @@ const books = [];
 
 export default (state = books, action) => {
   switch (action.type) {
-    case 'CREATE_BOOK/fulfilled':
-      return [
-        ...state, action.payload[1],
-      ];
+    case 'bookstore/books/CREATE_BOOK/fulfilled':
+     return action.payload;
 
-    case 'LOAD_BOOK/fulfilled':
+    case 'bookstore/books/LOAD_BOOK/fulfilled':
       return action.payload;
 
-    case 'DELETE_BOOK/fulfilled':
+    case 'bookstore/books/DELETE_BOOK/fulfilled':
       return state.filter((books) => books.item_id !== action.payload);
 
     default:

@@ -18,13 +18,13 @@ export default function BookLists() {
 
   return (
     <ul>
-      {displayBooks.map((bookList) => (
-        <li key={bookList.item_id}>
-          <div>{bookList.title}</div>
-          <div>{bookList.author}</div>
+      {Object.keys(displayBooks).map((bookId) => (
+        <li key={displayBooks[bookId][0].item_id}>
+          <div>{displayBooks[bookId][0].title}</div>
+          <div>{displayBooks[bookId][0].author}</div>
 
           <button
-            id={bookList.item_id}
+            id={displayBooks[bookId][0].item_id}
             type="button"
             onClick={(e) => deleteBookItems(e)}
           >
