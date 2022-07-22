@@ -1,5 +1,4 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { object } from 'prop-types';
 
 const CREATE_BOOK = 'bookstore/books/CREATE_BOOK';
 const DELETE_BOOK = 'bookstore/books/DELETE_BOOK';
@@ -46,5 +45,25 @@ export const loadBooks = createAsyncThunk(
     });
 
     return newArr;
+  },
+);
+
+const books = [];
+
+export default (state = books, action) => {
+  switch (action.type) {
+    case 'CREATE_BOOK/fulfilled':
+      return [
+        ...state, action.payload[1],
+      ];
+
+    case 'LOAD_BOOK/fulfilled':
+      return action.payload;
+
+    case 'DELETE_BOOK/fulfilled':
+      return state.filter((books) => books.item_id !== action.payload);
+
+    default:
+      return state;
   }
-)
+};
