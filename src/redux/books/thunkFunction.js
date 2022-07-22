@@ -16,8 +16,8 @@ export const createBook = createAsyncThunk(
       'content-type': 'application/json; charset=UTF-8',
     },
   })
-  .then((res) => res.text())
-  .then((data) => ([data, books])),
+    .then((res) => res.text())
+    .then((data) => ([data, books])),
 );
 
 export const deleteBook = createAsyncThunk(
@@ -25,8 +25,8 @@ export const deleteBook = createAsyncThunk(
   async (itemId) => fetch(`${baseUrl}/${appId}/books/${itemId}`, {
     method: 'DELETE',
   })
-  .then((res) => res.text())
-  .then((data) => ([data, itemId])),
+    .then((res) => res.text())
+    .then((data) => ([data, itemId])),
 );
 
 export const loadBooks = createAsyncThunk(
@@ -35,13 +35,13 @@ export const loadBooks = createAsyncThunk(
     const request = new Request(`${baseUrl}/${appId}/books`);
     const res = await fetch(request);
     const result = await res.json();
-    const arr = object.enteries(result);
+    const arr = Object.enteries(result);
 
     const newArr = [];
     arr.forEach((item) => {
       const itemId = item[0];
       const bookList = item[1][0];
-      newArr.push({...bookList, item_id: itemId});
+      newArr.push({ ...bookList, item_id: itemId });
     });
 
     return newArr;

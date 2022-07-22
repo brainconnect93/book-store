@@ -4,7 +4,7 @@ import { deleteBook, loadBooks } from '../redux/books/thunkFunction';
 
 export default function BookLists() {
   const displayBooks = useSelector((state) => state.books, shallowEqual);
-  
+
   const dispatch = useDispatch();
 
   useEffect(() => {
