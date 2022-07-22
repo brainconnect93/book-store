@@ -1,4 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { object } from 'prop-types';
 
 const CREATE_BOOK = 'bookstore/books/CREATE_BOOK';
 const DELETE_BOOK = 'bookstore/books/DELETE_BOOK';
@@ -19,3 +20,31 @@ export const createBook = createAsyncThunk(
   .then((res) => res.text())
   .then((data) => ([data, books])),
 );
+
+export const deleteBook = createAsyncThunk(
+  DELETE_BOOK,
+  async (itemId) => fetch(`${baseUrl}/${appId}/books/${itemId}`, {
+    method: 'DELETE',
+  })
+  .then((res) => res.text())
+  .then((data) => ([data, itemId])),
+);
+
+export const loadBooks = createAsyncThunk(
+  LOAD_BOOK,
+  async () => {
+    const request = new Request(`${baseUrl}/${appId}/books`);
+    const res = await fetch(request);
+    const result = await res.json();
+    const arr = object.enteries(result);
+
+    const newArr = [];
+    arr.forEach((item) => {
+      const itemId = item[0];
+      const bookList = item[1][0];
+      newArr.push({...bookList, item_id: itemId});
+    });
+
+    return newArr;
+  }
+)
