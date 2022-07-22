@@ -24,7 +24,7 @@ export default function BookLists() {
           <div>{displayBooks[bookId][0].author}</div>
 
           <button
-            id={displayBooks[bookId][0].item_id}
+            id={bookId}
             type="button"
             onClick={(e) => deleteBookItems(e)}
           >

@@ -1,28 +1,7 @@
 const ADD_BOOK = 'bookstore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
 
-const books = [
-  // {
-  //   id: '1',
-  //   title: 'Think Big',
-  //   author: 'Ben Carson',
-  // },
-  // {
-  //   id: '2',
-  //   title: 'The Power of Significance',
-  //   author: 'John Maxwell',
-  // },
-  // {
-  //   id: '3',
-  //   title: 'Change your thinking cahnge your life',
-  //   author: 'Brian Tracy',
-  // },
-  // {
-  //   id: '4',
-  //   title: 'The Leader who had no title',
-  //   author: 'Robin Sharma',
-  // },
-];
+const books = [];
 
 export const addedBook = (payload) => ({
   type: ADD_BOOK,

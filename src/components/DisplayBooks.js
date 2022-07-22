@@ -27,7 +27,6 @@ const DisplayBooks = () => {
     e.preventDefault();
 
     if (books.title.trim() && books.author.trim()) {
-      console.log(books);
       dispatch(createBook(books));
     }
 
