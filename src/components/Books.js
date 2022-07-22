@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch, shallowEqual } from 'react-redux';
-// import { removedBook } from '../redux/books/books';
 import { deleteBook, loadBooks } from '../redux/books/thunkFunction';
 
 export default function BookLists() {
   const displayBooks = useSelector((state) => state.books, shallowEqual);
+  
   const dispatch = useDispatch();
 
   useEffect(() => {
