@@ -83,8 +83,11 @@ body {
 
 .book-container {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: solid 1px #e8e8e8;
   padding-bottom: 1rem;
-  border-bottom: 1px solid var(--pinkish-grey);
 }
 
 .book-details {
