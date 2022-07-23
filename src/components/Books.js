@@ -20,7 +20,7 @@ export default function BookLists() {
   return (
     <ul className="book-container">
       {Object.keys(displayBooks).map((bookId) => (
-        <li className="" key={displayBooks[bookId][0].item_id}>
+        <li className="lesson-panel" key={displayBooks[bookId][0].item_id}>
           <div className="book-details">
             <dt className="category-item">{displayBooks[bookId][0].category}</dt>
             <dt className="title-item">{displayBooks[bookId][0].title}</dt>
@@ -29,6 +29,7 @@ export default function BookLists() {
               <button className="comment-btn" type="button">Comments</button>
 
               <button
+                className="remove-btn"
                 id={bookId}
                 type="button"
                 onClick={(e) => deleteBookItems(e)}
