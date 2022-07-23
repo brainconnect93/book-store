@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const AddBook = ({ handleSubmit, onChange }) => (
-  <div>
-    <h2>ADD NEW BOOK</h2>
+  <div className="form-container">
+    <h1 className="add-book">ADD NEW BOOK</h1>
     <form>
       <input
+        className="title-input"
         name="title"
         type="text"
         placeholder="Book title"
@@ -13,13 +14,29 @@ const AddBook = ({ handleSubmit, onChange }) => (
       />
 
       <input
+        className="author-input"
         name="author"
         type="text"
-        placeholder="Category"
+        placeholder="author"
         onChange={(e) => onChange(e)}
       />
 
+      <select
+        className="category-input"
+        name="category"
+        type="text"
+        onChange={(e) => onChange(e)}
+      >
+        <option value="Choose">Choose Category</option>
+        <option value="Fiction">Fiction</option>
+        <option value="Drama">Drama</option>
+        <option value="Action">Action</option>
+        <option value="Romance">Romance</option>
+        <option value="Kids">Kids</option>
+      </select>
+
       <button
+        className="submit-btn"
         onClick={(e) => handleSubmit(e)}
         type="submit"
       >
