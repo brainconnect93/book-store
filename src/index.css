@@ -94,8 +94,10 @@ body {
   width: 50%;
 }
 
-.Lesson-Panel {
+.lesson-panel {
   display: flex;
+  flex-direction: row;
+  border: 1px solid red;
   width: 96%;
   height: 10.625rem;
   margin: 0.8rem 3rem;
