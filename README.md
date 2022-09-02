@@ -19,7 +19,7 @@ This application was built using React and Redux.
 
 ## Live Demo
 
-- N/A
+- [live link](https://brain-bookstore-cms.netlify.app)
 
 ## Getting Started
 
