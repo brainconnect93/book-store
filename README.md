@@ -10,6 +10,10 @@
 
 This application was built using React and Redux.
 
+### Bookstore project screenshot
+
+> ![book-store](https://user-images.githubusercontent.com/78634841/188419458-a96fbe36-6360-41f0-9d89-d95e5de6dd49.png)
+
 ## Built With
 
 - React
